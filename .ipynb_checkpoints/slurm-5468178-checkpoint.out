@@ -1,0 +1,176 @@
+2023-02-22 17:36:51.903594: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-22 17:36:52.086219: I tensorflow/core/util/port.cc:104] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-02-22 17:36:55.905473: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory
+2023-02-22 17:36:55.905651: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory
+2023-02-22 17:36:55.905674: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+INFO:__main__:STARTING TRIAL: 1
+INFO:main:TASK IDS: None
+INFO:main:TRANSFER LEARNING SETTING: False
+INFO:main:Number of available GPU's: 2
+INFO:main:Succesfully loaded Tokenizer: google/flan-t5-base
+INFO:main:Succesfully loaded Model: google/flan-t5-base
+INFO:main:Sucessfully loaded training data: 659 examples
+INFO:main:Sucessfully loaded validation data: 73 examples
+INFO:main:Sucessfully loaded test data: 182 examples
+2023-02-22 17:37:45,812	INFO worker.py:1509 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+`Trainer(val_check_interval=1.0)` was configured so validation will run at the end of the training epoch..
+INFO:main:Succesfully loaded model and trainer...
+[2m[36m(RayExecutor pid=1796598)[0m /work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/utilities/warnings.py:53: LightningDeprecationWarning: pytorch_lightning.utilities.warnings.rank_zero_deprecation has been deprecated in v1.6 and will be removed in v1.8. Use the equivalent function from the pytorch_lightning.utilities.rank_zero module instead.
+[2m[36m(RayExecutor pid=1796598)[0m   new_rank_zero_deprecation(
+[2m[36m(RayExecutor pid=1796598)[0m /work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/utilities/warnings.py:58: LightningDeprecationWarning: ParallelStrategy.torch_distributed_backend was deprecated in v1.6 and will be removed in v1.8.
+[2m[36m(RayExecutor pid=1796598)[0m   return new_rank_zero_deprecation(*args, **kwargs)
+[2m[36m(RayExecutor pid=1796598)[0m Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/2
+[2m[36m(RayExecutor pid=1796599)[0m Initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/2
+[2m[36m(RayExecutor pid=1796599)[0m Missing logger folder: /work/salzubi_umass_edu/experiments/TRG_task___rankme_baseline/trial_1/logs/TRG_task___rankme_baseline___trial_1_logs/lightning_logs
+[2m[36m(RayExecutor pid=1796598)[0m ----------------------------------------------------------------------------------------------------
+[2m[36m(RayExecutor pid=1796598)[0m distributed_backend=nccl
+[2m[36m(RayExecutor pid=1796598)[0m All distributed processes registered. Starting with 2 processes
+[2m[36m(RayExecutor pid=1796598)[0m ----------------------------------------------------------------------------------------------------
+[2m[36m(RayExecutor pid=1796598)[0m 
+[2m[36m(RayExecutor pid=1796598)[0m GPU available: True (cuda), used: True (Please ignore the previous info [GPU used: False]).
+[2m[36m(RayExecutor pid=1796598)[0m Missing logger folder: /work/salzubi_umass_edu/experiments/TRG_task___rankme_baseline/trial_1/logs/TRG_task___rankme_baseline___trial_1_logs/lightning_logs
+[2m[36m(RayExecutor pid=1796599)[0m LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1]
+[2m[36m(RayExecutor pid=1796598)[0m LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+[2m[36m(RayExecutor pid=1796598)[0m 
+[2m[36m(RayExecutor pid=1796598)[0m   | Name  | Type                       | Params
+[2m[36m(RayExecutor pid=1796598)[0m -----------------------------------------------------
+[2m[36m(RayExecutor pid=1796598)[0m 0 | model | T5ForConditionalGeneration | 247 M 
+[2m[36m(RayExecutor pid=1796598)[0m -----------------------------------------------------
+[2m[36m(RayExecutor pid=1796598)[0m 247 M     Trainable params
+[2m[36m(RayExecutor pid=1796598)[0m 0         Non-trainable params
+[2m[36m(RayExecutor pid=1796598)[0m 247 M     Total params
+[2m[36m(RayExecutor pid=1796598)[0m 990.311   Total estimated model params size (MB)
+[2m[36m(RayExecutor pid=1796598)[0m /work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:233: UserWarning: strategy=ddp_spawn and num_workers=0 may result in data loading bottlenecks. Consider setting num_workers>0 and persistent_workers=True
+[2m[36m(RayExecutor pid=1796598)[0m   rank_zero_warn(
+[2m[36m(RayExecutor pid=1796598)[0m Sanity Checking: 0it [00:00, ?it/s]
+[2m[36m(RayExecutor pid=1796598)[0m Sanity Checking:   0%|          | 0/2 [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]
+[2m[36m(RayExecutor pid=1796598)[0m Sanity Checking DataLoader 0:  50%|█████     | 1/2 [00:00<00:00,  1.02it/s]Sanity Checking DataLoader 0:  50%|█████     | 1/2 [00:00<00:00,  1.02it/s]
+[2m[36m(RayExecutor pid=1796598)[0m Sanity Checking DataLoader 0: 100%|██████████| 2/2 [00:01<00:00,  1.78it/s]Sanity Checking DataLoader 0: 100%|██████████| 2/2 [00:01<00:00,  1.78it/s]
+[2m[36m(RayExecutor pid=1796598)[0m                                                                            
+[2m[36m(RayExecutor pid=1796598)[0m Training: 0it [00:00, ?it/s]Training:   0%|          | 0/334 [00:00<?, ?it/s]Epoch 0:   0%|          | 0/334 [00:00<?, ?it/s] 
+Traceback (most recent call last):
+  File "/work/salzubi_umass_edu/T5_human_eval_finetune/eval_script.py", line 56, in <module>
+    pred_df = main(args)
+  File "/work/salzubi_umass_edu/T5_human_eval_finetune/main.py", line 78, in main
+    trainer.fit(model, train_loader, val_loader)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 770, in fit
+    self._call_and_handle_interrupt(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 721, in _call_and_handle_interrupt
+    return self.strategy.launcher.launch(trainer_fn, *args, trainer=self, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/ray_lightning/launchers/ray_launcher.py", line 58, in launch
+    ray_output = self.run_function_on_workers(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/ray_lightning/launchers/ray_launcher.py", line 249, in run_function_on_workers
+    results = process_results(self._futures, self.tune_queue)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/ray_lightning/util.py", line 64, in process_results
+    ray.get(ready)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 105, in wrapper
+    return func(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/ray/_private/worker.py", line 2280, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::RayExecutor.execute()[39m (pid=1796598, ip=10.100.40.4, repr=<ray_lightning.launchers.utils.RayExecutor object at 0x7f1b0747d460>)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/ray_lightning/launchers/utils.py", line 52, in execute
+    return fn(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/ray_lightning/launchers/ray_launcher.py", line 301, in _wrapping_function
+    results = function(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 811, in _fit_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1236, in _run
+    results = self._run_stage()
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1323, in _run_stage
+    return self._run_train()
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1353, in _run_train
+    self.fit_loop.run()
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
+    self.advance(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/fit_loop.py", line 266, in advance
+    self._outputs = self.epoch_loop.run(self._data_fetcher)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
+    self.advance(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/training_epoch_loop.py", line 208, in advance
+    batch_output = self.batch_loop.run(batch, batch_idx)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
+    self.advance(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/batch/training_batch_loop.py", line 88, in advance
+    outputs = self.optimizer_loop.run(split_batch, optimizers, batch_idx)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
+    self.advance(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/optimization/optimizer_loop.py", line 203, in advance
+    result = self._run_optimization(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/optimization/optimizer_loop.py", line 256, in _run_optimization
+    self._optimizer_step(optimizer, opt_idx, batch_idx, closure)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/optimization/optimizer_loop.py", line 369, in _optimizer_step
+    self.trainer._call_lightning_module_hook(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1595, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/core/lightning.py", line 1646, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/core/optimizer.py", line 168, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, self._optimizer_idx, closure, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 193, in optimizer_step
+    return self.precision_plugin.optimizer_step(model, optimizer, opt_idx, closure, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/plugins/precision/precision_plugin.py", line 155, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/optim/optimizer.py", line 113, in wrapper
+    return func(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/optim/adamw.py", line 119, in step
+    loss = closure()
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/plugins/precision/precision_plugin.py", line 140, in _wrap_closure
+    closure_result = closure()
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/optimization/optimizer_loop.py", line 148, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/optimization/optimizer_loop.py", line 134, in closure
+    step_output = self._step_fn()
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/loops/optimization/optimizer_loop.py", line 427, in _training_step
+    training_step_output = self.trainer._call_strategy_hook("training_step", *step_kwargs.values())
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1765, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/strategies/ddp_spawn.py", line 247, in training_step
+    return self.model(*args, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 1008, in forward
+    output = self._run_ddp_forward(*inputs, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 969, in _run_ddp_forward
+    return module_to_run(*inputs[0], **kwargs[0])
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/pytorch_lightning/overrides/base.py", line 82, in forward
+    output = self.module.training_step(*inputs, **kwargs)
+  File "/work/salzubi_umass_edu/T5_human_eval_finetune/finetuner.py", line 104, in training_step
+    loss = self._step(batch)
+  File "/work/salzubi_umass_edu/T5_human_eval_finetune/finetuner.py", line 92, in _step
+    outputs = self(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/work/salzubi_umass_edu/T5_human_eval_finetune/finetuner.py", line 80, in forward
+    return self.model(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 1623, in forward
+    encoder_outputs = self.encoder(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 1052, in forward
+    layer_outputs = layer_module(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 684, in forward
+    self_attention_outputs = self.layer[0](
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 590, in forward
+    attention_output = self.SelfAttention(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 553, in forward
+    attn_weights = nn.functional.dropout(
+  File "/work/salzubi_umass_edu/.conda/envs/wmt_env/lib/python3.8/site-packages/torch/nn/functional.py", line 1252, in dropout
+    return _VF.dropout_(input, p, training) if inplace else _VF.dropout(input, p, training)
+RuntimeError: CUDA out of memory. Tried to allocate 24.00 MiB (GPU 0; 10.76 GiB total capacity; 2.94 GiB already allocated; 15.69 MiB free; 3.02 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
